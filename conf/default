@@ -1,0 +1,15 @@
+default menu.c32
+timeout 300
+
+menu title PXE Automation Install OS
+
+label 1
+    menu label ^1) Install CentOS 7
+    menu default
+    kernel centos7/vmlinuz
+    append initrd=centos7/initrd.img root=live:http://192.168.162.100/repo/centos7/LiveOS/squashfs.img inst.repo=http://192.168.162.100/reop/centos7/ inst.ks=http://192.168.162.100/ks/centos7.cfg
+
+label 2
+    menu label ^2) Install CentOS 6
+    kernel centos6/vmlinuz
+    append initrd=centos6/initrd.img inst.repo=http://192.168.162.100/reop/centos6/ inst.ks=http://192.168.162.100/ks/centos6.cfg
